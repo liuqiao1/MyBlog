@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+body{
+    font-size: 76%;
+    margin: 1em 10%;/*1em  ??*/
+    background-image: url(../img/bodBgm.jpg);
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: repeat-x;
+    max-width: 80em;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#navigation{
+
+}
+
+#navigation ul li{
+    list-style: none;
+    display: inline;
+    /*width: 3em;
+    [css] Property is ignored due to the display. With 'display: inline', 
+    the width, height, margin-top, margin-bottom, and float properties have no effect.*/
+}
+
+#navigation ul li a{
+    font-size: 1.6em;
+    /*width: 4em;*/
+    margin: 1em;
+}
