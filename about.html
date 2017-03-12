@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <!--<link type="text/css" href="style/basic.css"/>-->
+        <link rel="stylesheet" type="text/css" media="screen" href="style/basic.css" />
+    </head>
+
+    <body>
+        <!--画出漂浮云朵的画布-->
+        <canvas id="indexBgr"></canvas>
+
+        <!--顶部logo+导航-->
+        <header>
+        <div class="logoBox"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <nav id = "navigation">     
+            <ul>
+                <li><a href = "index.html" class="current">首页</a></li>
+                <li><a href = "note.html">学习笔记</a></li>
+                <li><a href = "collection.html">我的收藏</a></li>
+                <li><a href = "message.html">留言板</a></li>
+                <li><a href = "about.html">关于我</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <!--页面主体-->
+        <div class="main clearfix">
+            <!--<section class="main-center">-->
+            <div id = "me-box">
+               <img src="img/me1.jpg"/>
+            </div>   
+            <!--</section> -->
+            <div id = "me-intro">
+                <p>我是刘巧，中南大学软件学院16级研究生。</p>
+                <p>原本立志服务端开发，不曾想入了前端的坑。</p>
+                <p>但是我爱这个坑。</p>
+                <p>爱强悍灵活的JS,爱酷炫的HTML+CSS,爱各种新技术。</p>
+                <p>还有，爱一切美的东西。</p>
+                <p>希望与你分享学习路上的点点滴滴......</p>
+            </div>
+
+            <div id = "me-contact">
+                <ul>
+                    <a href = "https://github.com/liuqiao1" target="blank"><li class="git"></li></a>
+                    <li class = "qq"></li>
+                    <li class="weixin"></li>
+                    <a href="https://www.zhihu.com/people/xiao-wan-zi-86-81" target="blank"><li class = "zhihu">知</li><a>
+                    <a href="http://blog.csdn.net/u010785025" target="blank"><li class = "zhihu">C</li></a>
+                </ul>
+            </div>
+            <!--<dl>
+                <dd class="git">git</dd>
+                <dd class = "qq">qq</dd>
+                <dd class="weixin">weixin</dd>
+                <dd class = "zhihu">zhihu</dd>
+                <dd class = "csdn">csdn</dd>
+            </dl>-->
+        </div>
+        
+        <!--页面底部-->
+        <footer>
+            <div class="copyright"> ©2017 中南大学 刘巧 All Rights Reserved.</div>
+        </footer>
+
+        <script src="script/global.js"></script>
+        <script src="script/basic.js"></script>
+    </body>
+    
+</html>
