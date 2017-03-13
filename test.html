@@ -1,167 +1,176 @@
-<!DOCTYPE html>  
-<html>  
-  
-    <head>  
-        <meta charset="UTF-8">  
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0">  
-        <title>Slide-expamle</title>  
-        <style>  
-            html,  
-            body,  
-            ul,  
-            li,  
-            ol,  
-            img {  
-                margin: 0;  
-                padding: 0;  
-                border: none;  
-                list-style: none;  
-                border-image: none;  
-                border-image-width: 0;  
-            }  
-              
-            body {  
-                position: absolute;  
-                left: 0;  
-                right: 0;  
-                top: 0;  
-                bottom: 0;  
-            }  
-              
-            .content {  
-                width: 100%;  
-                height: 100%;  
-                overflow: hidden;  
-            }  
-              
-            .main {  
-                width: 300%;  
-                height: 100%;  
-            }  
-              
-            .main li {  
-                float: left;  
-                width: 33.333333%;  
-                height: 100%;  
-            }  
-              
-            .main li img {  
-                width: 100%;  
-                height: 100%;  
-            }  
-              
-            .nav {  
-                margin-top: -15%;  
-                padding: 0 25%;  
-                display: flex;  
-                justify-content: center;  
-            }  
-              
-            .nav li {  
-                width: 10px;  
-                height: 10px;  
-                border: 1px solid #e3e3e3;  
-                border-radius: 10px;  
-                background-color: #fff;  
-            }  
-              
-            .nav li+li {  
-                margin-left: 5px;  
-            }  
-              
-            .nav .active {  
-                background-color: #e3e3e3;  
-            }  
-        </style>  
-    </head>  
-  
-    <body>  
-        <div class="content">  
-            <ul id="main" class="main">  
-                <li><img src="img/360592421252747277.jpg" />  
-                    <ul class="nav">  
-                        <li class="active"></li>  
-                        <li></li>  
-                        <li></li>  
-                    </ul>  
-                </li>  
-                <li><img src="img/70711697724823488.jpg" />  
-                    <ul class="nav">  
-                        <li></li>  
-                        <li class="active"></li>  
-                        <li></li>  
-                    </ul>  
-                </li>  
-                <li><img src="img/825168513028341693.jpg" />  
-                    <ul class="nav">  
-                        <li></li>  
-                        <li></li>  
-                        <li class="active"></li>  
-                    </ul>  
-                </li>  
-            </ul>  
-        </div>  
-        <script>  
-            var body = document.body;  
-            body.addEventListener("orientationchange", function(e) {  
-                e.stopPropagation();  
-                e.preventDefault();  
-            });  
-            var main = document.getElementById('main');  
-  
-            var startX = 0,  
-                screenWidth = screen.width,  
-                bidTranslateX = 0,  
-                lang = 0;  
-            main.addEventListener('touchstart', function(e) {  
-                var touch = e.touches[0];  
-                startX = touch.pageX;  
-                console.log(startX);  
-            });  
-  
-            main.addEventListener('touchmove', function(e) {  
-                var touch = e.touches[0];  
-                var movingX = touch.pageX;  
-                lang = movingX - startX;  
-                var translateX = lang + bidTranslateX;  
-                if(Math.abs(lang) < screenWidth) {  
-                    if(lang < 0) {  
-                        if(translateX > -(screenWidth * 2)) {  
-                            this.style.transform = 'translateX(' + translateX + 'px)';  
-                        }  
-  
-                    } else {  
-                        if(translateX < 0) {  
-                            this.style.transform = 'translateX(' + translateX + 'px)';  
-                        }  
-                    }  
-                }  
-  
-                console.log("touchmove:" + translateX);  
-            });  
-  
-            main.addEventListener('touchend', function(e) {  
-                var touch = e.changedTouches[0],  
-                    translateX;  
-                var endX = touch.pageX;  
-                if(lang > 0) {  
-                    bidTranslateX += screenWidth;  
-                } else {  
-                    bidTranslateX -= screenWidth;  
-                }  
-  
-                if(bidTranslateX > 0) {  
-                    translateX = bidTranslateX = 0;  
-                } else if(Math.abs(bidTranslateX) > (screenWidth * 2)) {  
-                    translateX = bidTranslateX = -(screenWidth * 2);  
-                } else {  
-                    translateX = bidTranslateX;  
-                }  
-                this.style.transition = "-webkit-transform 500ms ease-out";  
-                this.style.webkitTransform = "translateX(" + translateX + "px)";  
-                console.log('touchend:' + bidTranslateX);  
-            });  
-        </script>  
-    </body>  
-  
-</html>  
+<html>
+    <head>
+        <!--<link type="text/css" href="style/basic.css"/>-->
+        <link rel="stylesheet" type="text/css" media="screen" href="style/basic.css" />
+        <style>
+           .course-tag{
+               width:70px;
+               height:30px;
+               background-color: cornflowerblue;
+               float: left
+           } 
+
+           .course-tags{
+               /*width:70px;
+               height:30px;*/
+               background-color: cornflowerblue;
+               float: left
+           } 
+
+           .course-tags li{
+               background-color: salmon;
+               list-style: none;
+               width:70px;
+               height:30px;
+               border-radius: 30%;
+               margin-bottom: 10px;
+               text-align: center;
+           } 
+           .course-list{
+                width:200px;height:500px; 
+                background-color: chocolate;
+                float: left;
+                display: none;
+           }
+           .course-wrapper{
+                background-color: violet;
+           }
+           .course-list-item{
+               width: 100%;
+               height: 100px;
+               background-color: darkgray;
+               margin-bottom: 10px;
+               display: none;
+           }
+        </style>
+    </head>
+
+    <body>
+        <!--画出漂浮云朵的画布-->
+        <canvas id="indexBgr"></canvas>
+
+        <!--顶部logo+导航-->
+        <header>
+        <div class="logoBox"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <nav id = "navigation">     
+            <ul>
+                <li><a href = "index.html" class="current">首页</a></li>
+                <li><a href = "note.html">学习笔记</a></li>
+                <li><a href = "collection.html">我的收藏</a></li>
+                <li><a href = "message.html">留言板</a></li>
+                <li><a href = "about.html">关于我</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <!--页面主体-->
+        <div class="main clearfix">
+
+            <div class="course-wrapper clearfix" >
+                <div class="course-list" id="course-list">
+                    <!--<ul>
+                        <li>-->
+                            <div class="course-list-item">HTML Content</div>
+                            <div class="course-list-item">CSS Content</div>
+                            <div class="course-list-item">JavaScript Content</div>
+                        <!--</li>
+                    </ul>-->
+                </div>
+                <!--<div class="course-tag" id = "course-tag">
+                    
+                </div>-->
+                <ul class="course-tags">
+                    <li>收起</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVAScript</li>
+                </ul>
+            </div>
+
+
+        </div>
+      
+        <!--页面底部-->
+        <footer>
+            <div class="copyright"> ©2017 中南大学 刘巧 All Rights Reserved.</div>
+        </footer>
+
+        <div id = "top-arrow"></div>
+
+        <script src="script/global.js"></script>
+        <script src="script/basic.js"></script>
+        <script>
+            function showList(){
+                //alert("showList");
+                
+                //var tag = document.getElementById("course-tag");
+                // tag.onmousemove = function(){
+                //     var list = document.getElementById("course-list");
+                //     list.style.display = "block";
+                // }
+
+                // tag.onmouseenter = function(){
+                //     var list = document.getElementById("course-list");
+                //     list.style.display = "block";
+                // }
+                var tabNav = document.getElementsByClassName("course-tags");
+                //alert(tabNav.length);
+
+                var tabItems = tabNav[0].getElementsByTagName("li");
+                //alert(tabItems.length); 
+
+               
+                //alert(tabContents.length);
+
+                for(var i=0;i<tabItems.length;i++){
+                    //alert(tabItems[i].lastChild.nodeValue);
+                    tabItems[i].onclick = function(){
+                        //alert(this.nodeName);
+                        var tabContents = document.getElementsByClassName("course-list-item");
+                        var id = getElemIndex(this);
+                        //alert(id);
+
+                        for(var i=0;i<tabContents.length;i++){
+                            //alert(tabContents[i].nodeName);
+                            
+                            if(getElemIndex(tabContents[i]) == id){
+                                //alert("OK");
+                                tabContents[i].parentNode.style.display = "block";
+                                tabContents[i].style.display = "block";
+                            }
+                            else{
+                                tabContents[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            }
+
+            //看element是parent的第几个孩子
+            function getElemIndex(element){
+                var index=-1;
+                //alert(element.nodeName);
+                var parent=element.parentNode;
+                if(!parent)return false;
+                //alert(parent.nodeName)
+
+                var kids = parent.children;//parentObj.children：获取已知节点的直接子节点数组。
+                //alert(kids.length);
+
+                for(var i=0;i<kids.length;i++){
+                    if(element.nodeName == kids[i].nodeName){
+                        //alert("Yes!");
+                        if(element == kids[i]){
+                            //alert(i);
+                            index=i;
+                        }
+                    }
+                }
+                //alert(index);
+                return index;
+            };
+            window.onload = showList;
+        </script>
+    </body>
+    
+</html>

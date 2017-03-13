@@ -33,8 +33,13 @@ header{
     /*background-color: green;*/
     position: relative;
     padding: 3em 4em;
-    height: 100%;
+
+    /*/保证一个最小高度，如果没有设置这个值，那么main的高度有可能比显示起屏幕的高度还要小*/
+
+    min-height: 500px;
     overflow: hidden;
+    /*height: 100%;*/
+    /*overflow: hidden;*/
     /*height: auto;
     widows: 100%;*/
 }
@@ -90,8 +95,50 @@ img{
 /*//////////////////////////////段落////////////////////////////*/
 p{
     font-size: 1.3em;
-    line-height: 2em;
+    line-height: 2em;    
+}
+#me-intro p{
     text-align: center;
+}
+/*//////////////////////////////回到顶部////////////////////////////*/
+#top-arrow{
+    width: 32px;
+    height: 32px;
+    /*margin-right: 10px;
+    margin-bottom: 10px;*/
+    /*background-color: palevioletred;*/
+    background-image: url("../img/箭头2.png");
+    border-radius: 20%;
+    /*position: absolute;*/
+    /*border-bottom: 0;*/
+}
+
+#top-arrow:hover{
+    background-image: url("../img/箭头5.png");
+    animation: shineRed;
+    
+    /*background-color: darkblue;*/
+    /*background-color: salmon;*/
+}
+/*//////////////////////////////更多////////////////////////////*/
+.more-box{
+    width: 100%;
+    height: 30px;
+    background: #CF4942;
+
+    /*text-align: center;*/
+    /*border-radius: 20%;*/
+}
+.more-box .more-icon{
+    /*float: left;*/
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin: auto;
+    height: 32px;
+    width: 32px;
+    background-image: url("../img/更多.png");
+    background-repeat: no-repeat;
+    /*border-radius: 20%;*/
 }
 
 /*-webkit-*/
@@ -141,6 +188,12 @@ to {background: yellow;}*/
 @keyframes flyIn {
     from    { top:400px;}
     to      { top:215px;}
+} 
+
+@-webkit-keyframes  shineRed {  
+    from { -webkit-box-shadow: 0 0 5px #bbb; }  
+    50% { -webkit-box-shadow: 0 0 10px red; }  
+    to { -webkit-box-shadow: 0 0 5px #bbb; }  
 }      
 
 /*/////////////////////////////小logo//////////////////////*/
@@ -350,6 +403,14 @@ footer .copyright{
     background-color: dodgerblue;
 }
 
+
+
+#qqNum{
+    /*position: absolute;
+    left:-30px;
+    top:30px;*/
+}
+
 /*.zcsdn{
     background-image: url("../img/icon-group-web.png");
     background-position-x: -128px;
@@ -361,3 +422,160 @@ footer .copyright{
     background-position-x: -128px;
     background-position-y: 32px;
 }*/
+
+/*//////////////////////////////note////////////////////////////*/
+.main-left{
+    height: 100%;
+    width: 20%;
+    /*background-color: salmon;*/
+    float: left;
+
+}
+.main-right{
+    padding: 0 2em 0 2em;
+    /*height: 100%;*/
+    width: 75%;
+    /*background-color:darkcyan;*/
+    float: left;
+    
+}
+#calender{
+    width: 100%;
+    height: 250px;
+    background-color: darkgray;
+    margin-bottom: 10px;
+}
+
+.main-left .search{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: darkgray;
+    margin-bottom: 10px;
+}
+
+.main-left .search input{
+    font-size: 1.3em;
+    width: 80%;
+    height: 100%;
+    
+}
+
+.main-left .search .search-button{
+    /*background-image: url("../img/search-icon1.png");
+    backgrou*/
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    /*background: #0e78e7;
+    background: -webkit-linear-gradient(top,#0e7bef,#0d73da);
+    background: linear-gradient(to bottom,#0e7bef,#0d73da);*/
+    /*border: 1px solid #045bb2;*/
+    /*border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;*/
+    /*box-shadow: 0 1px 2px rgba(0,0,0,.05), inset 0 1px 1px rgba(255,255,255,.15);
+    box-sizing: border-box;
+    outline: 0;
+    cursor: pointer;*/
+}
+
+.main-left .search .hide-text{
+    /*display: none;*/
+}
+.main-left .search .search-icon{
+    /*float: left;*/
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/ss-icon.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-left .courses{
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+}
+
+.main-right .blog_item{
+    /*text-align: left;*/
+    /*padding: 0 1em 0 1em;*/
+    width: 100%;
+    height: 180px;
+    background-color:#F5F5F5;
+    margin-bottom: 10px;
+    
+    position: relative;
+    /*border: 2px solid lightcoral;*/
+}
+
+.blog_item header{
+    position: relative;
+    border-bottom: 2px solid #bbe4f9;
+    /*background-color: sandybrown;*/
+}
+
+.blog_item footer{
+    /*background-color: darkgray;*/
+    /*height: 16px;*/
+    position: absolute;
+    bottom: 0;
+}
+
+.blog_item p{
+    display: block;
+    margin-left: 2em;
+    margin-right: 0em;
+}
+ 
+.post-meta{
+    /*width: 100%;
+    background-color: cadetblue;*/
+    /*position: absolute;
+    bottom: 0;*/
+}
+
+/*只选一代*/
+.post-meta > span {
+  display: inline-block;
+  padding-left: 22px;
+  margin-right: 15px;
+  line-height: 22px;
+}
+
+.post-meta .date{
+    background: url("../img/calendar-icon.png") no-repeat left center;
+    /*margin-right: 3em;*/
+    float: right;
+}
+.post-meta .viewd{
+    background: url("../img/eye-icon.png") no-repeat left center;
+    /*margin-right: 3em;*/
+    float: right;
+}
+.blog_item header .post-title{
+    /*border-bottom: 1px solid blue;*/
+}
+
+.readmore-link{
+    color: #769600;
+}
+
+.main-left .courses ul{
+    padding: 1em 1em 1em 1em;
+
+}
+
+.main-left .courses ul li{
+    list-style: none;
+    height: 24px;
+}
+
+.main-left .courses ul li a{
+   font-size: 1.2em;
+   color: #769600;
+}

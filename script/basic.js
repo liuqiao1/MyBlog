@@ -92,7 +92,54 @@ function highlightNav(){
 
 }
 
+//--------------------------返回顶部--------------------------------
+function toTop(){//实时监控窗口状态？ 有没有滚动事件？
+    //alert("toTop");   
+    var topArrow = document.getElementById("top-arrow");
+
+    /**clientWidth 属性是元素内容区宽度加上左右内边距宽度； */
+    topArrow.style.left = document.body.clientWidth - 48 +"px";
+    topArrow.style.top = document.body.clientHeight - 52 +"px";
+    topArrow.style.position = "fixed";
+    topArrow.style.display = "none";
+
+    /**
+     * (property) HTMLElement.onclick: (this: HTMLElement, ev: MouseEvent) => any
+     */
+    topArrow.onclick = function(){
+        document.body.scrollTop = 0;
+    }
+    /**
+     * (property) HTMLElement.onscroll: (this: HTMLElement, ev: UIEvent) => any
+     */
+    /**鼠标滚轮滚动事件 */
+    window.onscroll = function(){
+        /**scrollTop：被隐藏在内容区域上方的像素数。通过设置这个属性可以改变元素的滚动位置。 */
+        var scrollTop = document.body.scrollTop;
+        if(scrollTop>0){
+            //alert("OK");
+            topArrow.style.display = "block";
+            //fadeIn(topArrow);
+        }
+        else{
+            topArrow.style.display = "none";
+        }
+    }
+    //alert(scrollTop);
+    
+}
+
+function fadeIn(element){
+    alert("fadeIn");
+    element.style.opacity = "10%"; 
+    element.style.opacity = "40%"; 
+    element.style.opacity = "60%"; 
+    element.style.opacity = "80%"; 
+    element.style.opacity = "100%"; 
+}
+
 addLoadEvent(drawBackground);
 addLoadEvent(highlightNav);
+addLoadEvent(toTop);
 // window.onload = drawBackground;
 //  window.onload = highlightNav;
